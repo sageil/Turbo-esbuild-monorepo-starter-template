@@ -1,0 +1,7 @@
+{
+  "watch": ["src/**/*.ts", "!src/**/*.spec.ts"],
+  "ignore": ["src/**/*.test.ts", "src/**/*.spec.ts", "node_modules"],
+  "ext": "ts,mjs,cjs,json,js",
+  "exec": "etsc --config='./dev.cjs' && node ./dist/index.cjs",
+  "legacyWatch": true
+}

@@ -4,5 +4,7 @@ const distPath = path.resolve('./dist');
 await buildNode({
   logLevel: 'silent',
   tsconfig: './tsconfig.json',
-  outdir: distPath
+  outdir: distPath,
+  format: 'cjs',
+  drop: ['console', 'debugger']
 });
