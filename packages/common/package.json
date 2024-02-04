@@ -1,0 +1,21 @@
+{
+  "name": "@packages/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js && pnpm exec tsc --emitDeclarationOnly --declaration -p ./tsconfig.types.json",
+    "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

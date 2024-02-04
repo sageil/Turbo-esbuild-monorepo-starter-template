@@ -1,0 +1,76 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "//#lint": {
+      "inputs": [
+        "!.git/**",
+        "!node_modules/**",
+        "!tools/**",
+        "!packages/**",
+        "!services/**"
+      ]
+    },
+    "//#lint:fix": {
+      "inputs": [
+        "!.git/**",
+        "!node_modules/**",
+        "!tools/**",
+        "!packages/**",
+        "!services/**"
+      ]
+    },
+    "//#format": {
+      "inputs": [
+        "!.git/**",
+        "!node_modules/**",
+        "!tools/**",
+        "!packages/**",
+        "!services/**"
+      ]
+    },
+    "//#format:fix": {
+      "inputs": [
+        "!.git/**",
+        "!node_modules/**",
+        "!tools/**",
+        "!packages/**",
+        "!services/**"
+      ]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "clean:build": {
+      "inputs": [
+        "!.git/**",
+        "!node_modules/**",
+        "!tools/**",
+        "!packages/**",
+        "!services/**"
+      ],
+      "cache": false,
+      "persistent": true
+    },
+    "dev": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": false
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "cache": true,
+      "persistent": false
+    },
+    "lint": {},
+    "lint-all": {},
+    "lint:fix": {},
+    "format": {},
+    "format:fix": {}
+  }
+}

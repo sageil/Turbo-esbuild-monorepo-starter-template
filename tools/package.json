@@ -1,0 +1,38 @@
+{
+  "name": "@repo/tools",
+  "version": "0.0.0",
+  "private": true,
+  "description": "code tools",
+  "type": "module",
+  "exports": {
+    "./esbuild": {
+      "import": "./esbuild/index.js"
+    },
+    "./dev/*.cjs": {
+      "require": "./dev/*.cjs"
+    },
+    "./tsconfig/*.json": "./tsconfig/*.json",
+    "./eslint/*.cjs": {
+      "require": "./eslint/*.cjs"
+    },
+    "./jest/*.cjs": {
+      "require": "./jest/*.cjs"
+    }
+  },
+  "keywords": [
+    "Configs"
+  ],
+  "author": "Sammy Ageil",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@jgoz/esbuild-plugin-typecheck": "^3.1.0",
+    "esbuild": "^0.20.0",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "fast-glob": "^3.3.2",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.4"
+  }
+}

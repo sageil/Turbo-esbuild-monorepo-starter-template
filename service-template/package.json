@@ -1,0 +1,25 @@
+{
+  "name": "@services/template",
+  "version": "1.0.0",
+  "description": "Service Template",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint src/**/*.ts",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
+  },
+  "keywords": [
+    "Services",
+    "Template",
+    "Monorepo"
+  ],
+  "author": "Sammy Ageil",
+  "license": "MIT"
+}

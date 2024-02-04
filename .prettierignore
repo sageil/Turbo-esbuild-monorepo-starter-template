@@ -1,0 +1,12 @@
+.pnpm-store
+pnpm-lock.yaml
+node_modules
+dist
+**/**/*.cjs
+**/**/*.js
+
+**/**/*.json
+/toos
+/packages
+/services
+./
