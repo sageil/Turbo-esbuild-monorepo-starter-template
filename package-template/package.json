@@ -1,7 +1,7 @@
 {
-  "name": "@packages/common",
+  "name": "@packages/template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Package Template",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "type": "module",
@@ -16,6 +16,6 @@
     "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sammy Ageil",
   "license": "MIT"
 }

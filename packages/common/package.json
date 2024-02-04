@@ -1,7 +1,7 @@
 {
   "name": "@packages/common",
   "version": "1.0.0",
-  "description": "",
+  "description": "Common package to be used in monorepo",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "type": "module",
@@ -15,7 +15,11 @@
     "format:fix": "prettier --write .",
     "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Common",
+    "Package",
+    "Monorepo"
+  ],
+  "author": "Sammy Ageil",
   "license": "MIT"
 }

@@ -1,7 +1,7 @@
 {
   "name": "@services/example",
   "version": "1.0.0",
-  "description": "",
+  "description": "example express service",
   "type": "module",
   "types": "./types/index.d.ts",
   "scripts": {
