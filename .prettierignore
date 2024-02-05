@@ -2,11 +2,13 @@
 pnpm-lock.yaml
 node_modules
 dist
+/tools
+/packages
+/services
+
 **/**/*.cjs
 **/**/*.js
 
-**/**/*.json
-/toos
-/packages
-/services
-./
+pnpm-workspace.yaml
+package.json
+turbo.json

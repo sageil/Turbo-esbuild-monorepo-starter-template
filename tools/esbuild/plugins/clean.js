@@ -12,8 +12,8 @@ export const clean = (pathtoClean) => ({
         pathtoClean=path.dirname(pathtoClean)
         }
         await rm(pathtoClean, { recursive: true });
-      } catch (error) {
-        console.error("Error: ",JSON.stringify(error));
+      } catch  {
+       
       }
     });
   },

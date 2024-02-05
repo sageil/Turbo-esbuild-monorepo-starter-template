@@ -1,12 +1,17 @@
 {
-  "name": "@packages/template",
+  "name": "@packages/common",
   "version": "1.0.0",
-  "description": "Package Template",
+  "description": "Common package to be used in monorepo",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "type": "module",
+  "files": [
+    "./dist",
+    "./types"
+  ],
   "scripts": {
     "build": "node build.js && pnpm exec tsc --emitDeclarationOnly --declaration -p ./tsconfig.types.json",
+    "prod": "pnpm --filter=@packages/common --prod deploy ../../production-deployments/common-prod/",
     "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
     "start": "node ./dist/index.js",
     "dev": "nodemon",
@@ -15,7 +20,12 @@
     "format:fix": "prettier --write .",
     "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
   },
-  "keywords": [],
+  "keywords": [
+    "Common",
+    "Package",
+    "Monorepo"
+  ],
+  "dependencies": {},
   "author": "Sammy Ageil",
   "license": "MIT"
 }
