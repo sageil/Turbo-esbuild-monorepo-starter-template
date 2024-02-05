@@ -5,8 +5,13 @@
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "type": "module",
+  "files": [
+    "./dist",
+    "./types"
+  ],
   "scripts": {
     "build": "node build.js && pnpm exec tsc --emitDeclarationOnly --declaration -p ./tsconfig.types.json",
+    "prod": "pnpm --filter=@packages/common --prod deploy ../../production-deployments/common-prod/",
     "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
     "start": "node ./dist/index.js",
     "dev": "nodemon",
@@ -20,6 +25,7 @@
     "Package",
     "Monorepo"
   ],
+  "dependencies": {},
   "author": "Sammy Ageil",
   "license": "MIT"
 }

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build --cache-dir='./.cache'",
+    "prod": "turbo run --parallel prod",
     "dev": "turbo run dev",
     "start": "turbo run start",
     "lint-format": "turbo run --parallel lint format ",
@@ -14,7 +15,8 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "test": "turbo run test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "clean": "rimraf ./.cache ./.turbo ./production-deployments/**"
   },
   "keywords": [
     "Mono repo",
@@ -40,11 +42,12 @@
     "lint-staged": "^15.2.1",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
     "turbo": "^1.12.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@packages/common": "workspace:^",
+    "@packages/common": "workspace:*",
     "express": "^4.18.2"
   }
 }
