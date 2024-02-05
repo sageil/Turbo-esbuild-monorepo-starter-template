@@ -18,10 +18,10 @@ packages:
 
 ### Adding services or packages
 
-- Adding a package
-  Fron the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
-- Adding a service
-  Fron the root of your project, execute `cp -frp package-template services/The_name_of_your_package`
+- *Adding a package*
+  From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
+- *Adding a service*
+  From the root of your project, execute `cp -frp package-template services/The_name_of_your_package`
 
 #### Available Scripts
 
