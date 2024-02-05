@@ -33,8 +33,8 @@ packages:
 - `pnpm lint-all`: Start eslint on all projects within the monorepo
 - `pnpm format`: Start prettier
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
-- `pnpm lint-format:fix`: Apply linting and format fixing on all projects in the monorepo
-- `pnpm format:fix`: Apply prettier formatingfix on all projects in the monorepo
+- `pnpm lint-format:fix`: Apply linting and formating fixing on all projects in the monorepo
+- `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects in the monorepo
 
 ## Tools used to build this starter template
 
