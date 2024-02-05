@@ -4,3 +4,4 @@ node_modules
 dist
 .prettierrc.yaml
 package.json
+tsconfig*
