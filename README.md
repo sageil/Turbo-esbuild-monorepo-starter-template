@@ -21,20 +21,21 @@ packages:
 - *Adding a package*
   From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
 - *Adding a service*
-  From the root of your project, execute `cp -frp package-template services/The_name_of_your_package`
+  From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
+*Note*: Please change the name property in your project's package.json to reflect the new project name
 
 #### Available Scripts
 
 - `pnpm build`: Builds all services and packages. To bypass turbo cache, use `pnpm build --force`
 - `pnpm dev`: Starts nodemon in all packages and services
-- `pnpm test`: Start test suites
+- `pnpm test`: Start test suites in all projects within the monorepo
 - `pnpm start`:Starts all packages and components in production mode
-- `pnpm prod`: Creates a production _only_ deployments for your services and deployments. This must be followed by `pnpm install` in the root directory of the service or component.
+- `pnpm prod`: Creates a production *only* deployments for your services and deployments. This must be followed by `pnpm install` in the root directory of the service or component.
 - `pnpm lint-all`: Start eslint on all projects within the monorepo
-- `pnpm format`: Start prettier
+- `pnpm fformat-all`: Start prettier in all projects within the monorepo
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
-- `pnpm lint-format:fix`: Apply linting and formating fixing on all projects in the monorepo
-- `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects in the monorepo
+- `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
+- `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
 
 ## Tools used to build this starter template
 
