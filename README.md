@@ -24,7 +24,7 @@ packages:
   From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
 *Note*: Please change the name property in your project's package.json to reflect the new project name
 
-#### Available Scripts
+### Available Scripts
 
 - `pnpm build`: Builds all services and packages. To bypass turbo cache, use `pnpm build --force`
 - `pnpm dev`: Starts nodemon in all packages and services
@@ -36,6 +36,13 @@ packages:
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
 - `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
 - `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
+
+### Git hooks
+
+- *commit-msg* used to validate commit messages using conventional commits
+- *pre-commit* used to run lint staged files
+- *post-merge* used to run pnpm -install and pnpm test-
+- *post-checkout* used to run pnpm install && pnpm lint-staged
 
 ## Tools used to build this starter template
 

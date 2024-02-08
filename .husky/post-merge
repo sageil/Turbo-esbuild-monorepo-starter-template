@@ -3,4 +3,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Automate and ensure dependencies are installed/synced with the branch's codebase
-pnpm install
+pnpm install && pnpm test
