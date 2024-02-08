@@ -39,10 +39,10 @@ packages:
 
 ### Git hooks
 
-- **commit-msg** used to validate commit messages using conventional commits
-- **pre-commit** used to run lint staged files
-- **post-merge** used to run pnpm -install and pnpm test-
-- **post-checkout** used to run pnpm install && pnpm lint-staged
+- **commit-msg**: used to validate commit messages using conventional commits
+- **pre-commit**: used to run lint staged files
+- **post-merge**: used to run pnpm -install and pnpm test-
+- **post-checkout**: used to run pnpm install && pnpm lint-staged
 
 ## Tools used to build this starter template
 
