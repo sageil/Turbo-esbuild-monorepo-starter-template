@@ -18,7 +18,7 @@
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit --coverage"
   },
   "keywords": [
     "Common",
