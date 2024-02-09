@@ -53,6 +53,7 @@ packages:
 - [Node.js](https://nodejs.org/en)
 - [Jest](https://jestjs.io/)
 - [Eslint](https://eslint.org/)
+- [lint-staged](https://github.com/lint-staged/lint-staged)
 - [Prettier](https://prettier.io/)
 - [Swc](https://swc.rs/)
 - [Swc/Jest](https://swc.rs/docs/usage/jest)
