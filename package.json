@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build --cache-dir='./.cache'",
-    "prod": "turbo run --parallel prod",
+    "prod": "pnpm clean:prod && turbo run --parallel prod",
+    "clean:prod": "rimraf ./production-deployments/**",
     "dev": "turbo run dev",
     "start": "turbo run start",
     "lint-format": "turbo run --parallel lint format ",
