@@ -53,6 +53,12 @@ Open the `docs` directory in your and browse `index.html` using your development
 - **pre-commit**: used to run lint staged files
 - **post-merge**: used to run pnpm -install and pnpm test-
 - **post-checkout**: used to run pnpm install && pnpm lint-staged
+## ToDo
+- [x] Add Typedocs
+- [x] Add Jets
+- [x] Add eslint
+- [ ] Add devContainer
+
 
 ## Tools used to build this starter template
 
