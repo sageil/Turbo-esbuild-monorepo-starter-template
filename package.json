@@ -16,7 +16,9 @@
     "format:fix": "prettier --write .",
     "test": "turbo run test",
     "prepare": "husky",
-    "clean": "rimraf ./.cache ./.turbo ./production-deployments/**"
+    "clean": "rimraf ./.cache ./.turbo ./production-deployments/**",
+    "docs": "typedoc",
+    "docs-all": "pnpm -w run docs"
   },
   "keywords": [
     "Mono repo",
@@ -44,6 +46,7 @@
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "turbo": "^1.12.3",
+    "typedoc": "^0.25.8",
     "typescript": "^5.3.3"
   },
   "dependencies": {

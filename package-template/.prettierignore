@@ -2,7 +2,5 @@
 pnpm-lock.yaml
 node_modules
 dist
-package.json
-nodemon.json
-tsconfig*
 .prettierrc.yaml
+tsconfig*

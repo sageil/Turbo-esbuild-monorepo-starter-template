@@ -36,6 +36,7 @@ packages:
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
 - `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
 - `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
+- `pnpm docs`: Start typedoc on all projects within the monorepo
 
 ### Git hooks
 
@@ -58,3 +59,4 @@ packages:
 - [Swc](https://swc.rs/)
 - [Swc/Jest](https://swc.rs/docs/usage/jest)
 - [husky](https://typicode.github.io/husky/get-started.html)
+- [Typedoc](https://typedoc.org/)

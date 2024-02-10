@@ -1,3 +1,7 @@
+/**
+ * Docs for `service index` module
+ * @packageDocumentation
+ */
 import type { Application, Request, Response } from 'express';
 import express from 'express';
 const app: Application = express();
@@ -10,3 +14,13 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000');
   console.log('Visit http://localhost:3000/');
 });
+/**
+ *
+ * @param incoming string
+ * @returns lowercase string
+ */
+export function magicalLowerCase(incoming: string): string {
+  return incoming.toLocaleLowerCase();
+}
+const s = magicalLowerCase('Hello');
+console.log(s);

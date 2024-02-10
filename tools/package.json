@@ -8,6 +8,7 @@
     "./esbuild": {
       "import": "./esbuild/index.js"
     },
+    "./typedoc/*.json": "./typedoc/*.json",
     "./dev/*.cjs": {
       "require": "./dev/*.cjs"
     },

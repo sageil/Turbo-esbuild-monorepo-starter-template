@@ -1,0 +1,5 @@
+{
+  "extends": ["@repo/tools/typedoc/typedoc.base.json"],
+  "name": "@packages/common",
+  "entryPoints": ["./src/index.ts"]
+}
