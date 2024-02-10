@@ -54,10 +54,15 @@ Open the `docs` directory in your and browse `index.html` using your development
 - **post-merge**: used to run pnpm -install and pnpm test-
 - **post-checkout**: used to run pnpm install && pnpm lint-staged
 ## ToDo
+- [x] Add & configure husky
 - [x] Add Typedocs
+- [x] Add Prettier
 - [x] Add Jets
 - [x] Add eslint
+- [x] Add esbuild with type checking
+- [x] Add Development option with watch mode
 - [ ] Add devContainer
+- [ ] Clean browser specific tsconfig
 
 
 ## Tools used to build this starter template
