@@ -16,7 +16,7 @@ packages:
 
 - `Tools` is used to host development and build tools esbuild, jest, eslint & prettier
 
-### Adding services or packages
+## Adding services or packages
 
 - *Adding a package*
   From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
@@ -24,7 +24,7 @@ packages:
   From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
 *Note*: Please change the name property in your project's package.json to reflect the new project name
 
-### Available Scripts
+## Available Scripts
 
 - `pnpm build`: Builds all services and packages. To bypass turbo cache, use `pnpm build --force`
 - `pnpm dev`: Starts nodemon in all packages and services
@@ -36,9 +36,18 @@ packages:
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
 - `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
 - `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
-- `pnpm docs-all`: Start typedoc on all projects within the monorepo
+- `pnpm docs-all`: Start typedoc on all projects within the monorepo in directory called `docs` in the root of your monorepo
 
-### Git hooks
+## Viewing the generated documentation
+
+Open the `docs` directory in your and browse `index.html` using your development live server
+
+<p align="center">
+  <img  src="assets/docs.png?raw=true">
+</p>
+
+
+## Git hooks
 
 - **commit-msg**: used to validate commit messages using conventional commits
 - **pre-commit**: used to run lint staged files
