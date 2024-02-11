@@ -1,4 +1,4 @@
-# Builder image
+# base image
 FROM node:20.11.0-alpine3.19 AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -6,14 +6,16 @@ RUN corepack enable
 COPY . /app
 WORKDIR /app
 
-
-
+## builder image
 FROM base AS build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build -F @services/example
 
+## production dependencies only image
 FROM base AS prod-deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --ignore-scripts --frozen-lockfile
+
+## final image
 FROM node:20.11.0-alpine3.19 as prod
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 user
