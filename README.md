@@ -50,7 +50,7 @@ packages:
 
 Before using the taskfile to build your services, make sure you have installed [docker](https://docs.docker.com),and [Taskfile](https://taskfile.dev) in your environment. 
 
-- Usibg your shell, run `task docker` to build the docker image and run the container
+- Using your shell, run `task docker` to build the docker image and run the container
 
 - Using your shell, run `task --watch docker` to build, deploy and watch your project for changes in docker.
 
