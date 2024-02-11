@@ -7,7 +7,7 @@ import express from 'express';
 const app: Application = express();
 
 app.get('/', (_: Request, res: Response) => {
-  res.send('Built with Typescript, PNPM and esbuild');
+  res.send('Built with Typescript, PNPM and esbuild.');
 });
 
 app.listen(3000, () => {

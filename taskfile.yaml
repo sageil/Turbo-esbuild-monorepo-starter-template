@@ -1,0 +1,39 @@
+version: "3"
+set:
+  - "pipefail"
+env:
+  IMAGENAME: monorepo-demo
+  CONTAINER_NAME: monorepo-demo
+  TAG: latest
+  CONTAINER_PORT: 3000
+  HOSTPORT: 3000
+tasks:
+  remove-container:
+    aliases: [rmc]
+    description: "Remove container if it's running"
+    labels: "Removing container"
+    cmds:
+      - docker container rm -f ${CONTAINER_NAME} || true
+  build:
+    description: "Build image"
+    labels: "Building image"
+    cmds:
+       - docker image build -t ${IMAGENAME} -f Dockerfile .
+  run:
+    description: "Run container"
+    labels: "Running container"
+    cmds:
+      - docker container run --name ${CONTAINER_NAME} -p ${HOSTPORT}:${CONTAINER_PORT} -d ${IMAGENAME}:${TAG}
+  docker:
+    interval: 200m
+    description: "Run docker commands"
+    cmds:
+      - task: rmc
+      - task: build
+      - task: run
+    sources:
+      - "./Dockerfile"
+      - "./services/**/*"
+      - "./packages/**/*"
+    preconditions:
+      - test -e "Dockerfile"

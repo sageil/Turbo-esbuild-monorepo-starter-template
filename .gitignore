@@ -18,3 +18,4 @@ coverage
 !.env.example
 production-deployments
 docs
+.task

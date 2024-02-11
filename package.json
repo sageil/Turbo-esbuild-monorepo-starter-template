@@ -19,7 +19,8 @@
     "prepare": "husky",
     "clean": "rimraf ./.cache ./.turbo ./production-deployments/**",
     "docs": "typedoc",
-    "docs-all": "pnpm -w run docs"
+    "docs-all": "pnpm -w run docs",
+    "viewdocs": "pnpm exec live-server --port=57208 --open=./docs --root=./--ignore=.git"
   },
   "keywords": [
     "Mono repo",
@@ -43,6 +44,7 @@
     "husky": "^9.0.10",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.2",
+    "live-server": "^1.2.2",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",

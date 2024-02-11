@@ -1,8 +1,16 @@
 # Turbo Esbuild Monorepo Starter Template
 
-PNPM based monorepo preconfigured with eslint, Jest, esbuild and Typescript
+PNPM based monorepo preconfigured with docker, eslint, Jest, esbuild and Typescript
 
-## Template Structure
+***Windows Users Only:***
+I have *only* tested this on Windows 10 with WSL2. Please create an [issue](https://github.com/sageil/Turbo-esbuild-monorepo-starter-template/issues) if you encounter any problems using the template.
+## Getting Started
+
+- Install `pnpm` using `npm install -g pnpm` 
+- Clone the template `git clone https://github.com/sageil/turbo-esbuild-monorepo-template`
+- Run `pnpm install`
+
+### Template Structure
 
 ```yaml
 packages:
@@ -16,7 +24,7 @@ packages:
 
 - `Tools` is used to host development and build tools esbuild, jest, eslint & prettier
 
-## Adding services or packages
+### Adding services or packages
 
 - *Adding a package*
   From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
@@ -24,7 +32,7 @@ packages:
   From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
 *Note*: Please change the name property in your project's package.json to reflect the new project name
 
-## Available Scripts
+### Available PNPM Scripts
 
 - `pnpm build`: Builds all services and packages. To bypass turbo cache, use `pnpm build --force`
 - `pnpm dev`: Starts nodemon in all packages and services
@@ -38,22 +46,30 @@ packages:
 - `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
 - `pnpm docs-all`: Start typedoc on all projects within the monorepo in directory called `docs` in the root of your monorepo
 
-## Viewing the generated documentation
+### Using taskfile to build your services using docker
 
-Open the `docs` directory in your and browse `index.html` using your development live server
+Before using the taskfile to build your services, make sure you have installed [docker](https://docs.docker.com),and [Taskfile](https://taskfile.dev) in your environment. 
 
+- Usibg your shell, run `task docker` to build the docker image and run the container
+
+- Using your shell, run `task --watch docker` to build, deploy and watch your project for changes in docker.
+
+### Viewing the generated documentation
+ - Execute `pnpm viewdocs` in the root of your monorepo to view the generated documentation in your default browser(http://127.0.0.1:57208/docs).
 <p align="center">
   <img  src="assets/docs.png?raw=true">
 </p>
 
 
-## Git hooks
+### Git hooks
 
 - **commit-msg**: used to validate commit messages using conventional commits
 - **pre-commit**: used to run lint staged files
 - **post-merge**: used to run pnpm -install and pnpm test-
 - **post-checkout**: used to run pnpm install && pnpm lint-staged
-## ToDo
+
+### ToDo
+
 - [x] Add & configure husky
 - [x] Add Typedocs
 - [x] Add Prettier
@@ -61,11 +77,11 @@ Open the `docs` directory in your and browse `index.html` using your development
 - [x] Add eslint
 - [x] Add esbuild with type checking
 - [x] Add Development option with watch mode
-- [ ] Add devContainer
+- [x] Add Docker
+- [x] Add taskfile
 - [ ] Clean browser specific tsconfig
 
-
-## Tools used to build this starter template
+### Tools used to build this starter template
 
 - [PNPM](https://pnpm.io)
 - [Esbuild](https://github.com/evanw/esbuild)
@@ -80,3 +96,6 @@ Open the `docs` directory in your and browse `index.html` using your development
 - [Swc/Jest](https://swc.rs/docs/usage/jest)
 - [husky](https://typicode.github.io/husky/get-started.html)
 - [Typedoc](https://typedoc.org/)
+- [Taskfile](https://taskfile.dev)
+- [Docker](https://www.docker.com)
+- [Turbo](https://turbo.build)
