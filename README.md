@@ -2,11 +2,12 @@
 
 PNPM based monorepo preconfigured with docker, eslint, Jest, esbuild and Typescript
 
-***Windows Users Only:***
-I have *only* tested this on Windows 10 with WSL2. Please create an [issue](https://github.com/sageil/Turbo-esbuild-monorepo-starter-template/issues) if you encounter any problems using the template.
+**_Windows Users Only:_**
+I have _only_ tested this on Windows 10 with WSL2. Please create an [issue](https://github.com/sageil/Turbo-esbuild-monorepo-starter-template/issues) if you encounter any problems using the template.
+
 ## Getting Started
 
-- Install `pnpm` using `npm install -g pnpm` 
+- Install `pnpm` using `npm install -g pnpm`
 - Clone the template `git clone https://github.com/sageil/turbo-esbuild-monorepo-template`
 - Run `pnpm install`
 
@@ -27,14 +28,14 @@ packages:
 
 ### Adding services or packages
 
-- *Adding a package*
+- _Adding a package_
   From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
-- *Adding a service*
+- _Adding a service_
   From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
-  - *Adding an App*
-  From the root of your project, execute `cp -frp app-template apps/The_name_of_your_app`
+  - _Adding an App_
+    From the root of your project, execute `cp -frp app-template apps/The_name_of_your_app`
 
-*Note*: Please change the name property in your project's `package.json` to reflect the new project name
+_Note_: Please change the name property in your project's `package.json` to reflect the new project name
 
 ### Available PNPM Scripts
 
@@ -42,7 +43,7 @@ packages:
 - `pnpm dev`: Starts nodemon in all packages and services
 - `pnpm test`: Start test suites in all projects within the monorepo
 - `pnpm start`:Starts all packages and components in production mode
-- `pnpm prod`: Creates a production ***only*** deployments for your services and components. This must be followed by `pnpm install` in the root directory of the service or component.
+- `pnpm prod`: Creates a production **_only_** deployments for your services and components. This must be followed by `pnpm install` in the root directory of the service or component.
 - `pnpm lint-all`: Start eslint on all projects within the monorepo
 - `pnpm format-all`: Start prettier in all projects within the monorepo
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
@@ -61,11 +62,11 @@ Before using the taskfile to build your services, make sure you have installed [
 - `task --watch docker --force`: Used to force build, deploy and watch your project for changes in docker.
 
 ### Viewing the generated documentation
- - Execute `pnpm viewdocs` in the root of your monorepo to view the generated documentation in your default browser(http://127.0.0.1:57208/docs).
+
+- Execute `pnpm viewdocs` in the root of your monorepo to view the generated documentation in your default browser(http://127.0.0.1:57208/docs).
 <p align="center">
   <img  src="assets/docs.png?raw=true">
 </p>
-
 
 ### Git hooks
 
