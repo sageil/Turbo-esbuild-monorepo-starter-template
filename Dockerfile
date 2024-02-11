@@ -7,13 +7,17 @@ RUN corepack enable
 
 WORKDIR /app
 COPY . .
+RUN --mount=type=cache,id=turbo,target=/.cache
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-RUN pnpm build
+RUN pnpm build -F @services/example
 # Repeat the following step for every service you want to deploy
 RUN pnpm deploy -F @services/example --prod /prod/example-prod/
 # Production image
 FROM builder AS prod
-COPY --from=builder /prod/example-prod/ /prod/example-prod/
-WORKDIR /prod/example-prod/
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 user
+USER user
+COPY --from=builder /prod/example-prod/ /app/
+WORKDIR app
 EXPOSE 3000
 CMD [ "pnpm", "start" ]

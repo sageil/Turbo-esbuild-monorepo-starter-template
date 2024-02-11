@@ -106,3 +106,5 @@ Before using the taskfile to build your services, make sure you have installed [
 - [Taskfile](https://taskfile.dev)
 - [Docker](https://www.docker.com)
 - [Turbo](https://turbo.build)
+
+ pnpm dlx turbo prune @services/example --docker

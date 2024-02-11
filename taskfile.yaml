@@ -13,7 +13,7 @@ tasks:
     description: "Remove container if it's running"
     labels: "Removing container"
     cmds:
-      - docker container rm -f ${CONTAINER_NAME} || true
+      - docker container rm -f ${CONTAINER_NAME}
   build:
     description: "Build image"
     labels: "Building image"
@@ -23,14 +23,15 @@ tasks:
     description: "Run container"
     labels: "Running container"
     cmds:
-      - docker container run --name ${CONTAINER_NAME} -p ${HOSTPORT}:${CONTAINER_PORT} -d ${IMAGE_NAME}:${TAG}
+      - docker container run --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} -d ${IMAGE_NAME}:${TAG}
   docker:
-    interval: 200m
+    interval: 20m
     description: "Run docker commands"
     cmds:
-      - task: rmc
+      - task: remove-container
       - task: build
       - task: run
+    
     sources:
       - "./Dockerfile"
       - "./services/**/*"
