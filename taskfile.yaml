@@ -25,7 +25,7 @@ tasks:
     cmds:
       - docker container run --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} -d ${IMAGE_NAME}:${TAG}
   docker:
-    interval: 20m
+    interval: 20ms
     description: "Run docker commands"
     cmds:
       - task: remove-container
