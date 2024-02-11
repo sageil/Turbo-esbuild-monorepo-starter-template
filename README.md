@@ -48,7 +48,7 @@ packages:
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
 - `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
 - `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
-- `pnpm docs-all`: Start typedoc on all projects within the monorepo in directory called `docs` in the root of your monorepo
+- `pnpm gendocs`: Start typedoc on all projects within the monorepo in directory called `docs` in the root of your monorepo
 
 ### Using taskfile to build your services using docker
 
@@ -58,7 +58,7 @@ Before using the taskfile to build your services, make sure you have installed [
 
 - `task docker`: Used to build the docker image and run the container
 - `task --watch docker`: Used to build, deploy and watch your project for changes in docker.
-- `tasl --watch docker --force`: Used to force build, deploy and watch your project for changes in docker.
+- `task --watch docker --force`: Used to force build, deploy and watch your project for changes in docker.
 
 ### Viewing the generated documentation
  - Execute `pnpm viewdocs` in the root of your monorepo to view the generated documentation in your default browser(http://127.0.0.1:57208/docs).

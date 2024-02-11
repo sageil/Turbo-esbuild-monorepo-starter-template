@@ -1,0 +1,6 @@
+{
+  "extends": ["@repo/tools/typedoc/typedoc.base.json"],
+  "name": "@apps/example",
+  "entryPoints": ["./src/index.ts"],
+  "exclude": ["../../README.md"]
+}

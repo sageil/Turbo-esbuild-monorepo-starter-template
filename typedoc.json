@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["packages/*", "services/*"],
+  "entryPoints": ["packages/*", "services/*", "apps/*"],
   "name": "My Monorepo",
   "entryPointStrategy": "packages",
   "includeVersion": false

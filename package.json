@@ -19,7 +19,7 @@
     "prepare": "husky",
     "clean": "rimraf ./.cache ./.turbo ./production-deployments/**",
     "docs": "typedoc",
-    "docs-all": "pnpm -w run docs",
+    "gendocs": "pnpm -w run docs",
     "viewdocs": "pnpm exec live-server --port=57208 --open=./docs --root=./--ignore=.git"
   },
   "keywords": [

@@ -4,15 +4,19 @@
   "description": "Sample browser app",
   "main": "dist/index.js",
   "type": "module",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "build": "node build.js",
-    "prod": "pnpm --filter=@services/example --prod deploy ../../production-deployments/example-prod/",
+    "prod": "pnpm --filter=@apps/example --prod deploy ../../production-deployments/brwoser-prod/",
     "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
     "dev": "nodemon",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "test": "jest --passWithNoTests --detectOpenHandles --forceExit --coverage"
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit --coverage",
+    "docs": "typedoc --options typedoc.json"
   },
   "keywords": ["App", "Example", "Monorepo"],
   "author": "Sammy Ageil",
