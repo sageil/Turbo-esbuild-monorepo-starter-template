@@ -2,9 +2,7 @@
 pnpm-lock.yaml
 node_modules
 dist
-/tools
-/packages
-/services
+coverage/**/*
 
 **/**/*.cjs
 **/**/*.js

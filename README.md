@@ -16,12 +16,13 @@ I have *only* tested this on Windows 10 with WSL2. Please create an [issue](http
 packages:
   - "services/**"
   - "packages/**"
+  - "apps/**"
   - "tools/**"
 ```
 
 - `Services` is used to build and deploy services. See `services/example`
 - `Packages` is used to build and deploy packages or components to use in your services
-
+- `Apps` is used to build and deploy browser based apps
 - `Tools` is used to host development and build tools esbuild, jest, eslint & prettier
 
 ### Adding services or packages
@@ -30,7 +31,10 @@ packages:
   From the root of your project, execute `cp -frp package-template packages/The_name_of_your_package`
 - *Adding a service*
   From the root of your project, execute `cp -frp service-template services/The_name_of_your_service`
-*Note*: Please change the name property in your project's package.json to reflect the new project name
+  - *Adding an App*
+  From the root of your project, execute `cp -frp app-template apps/The_name_of_your_app`
+
+*Note*: Please change the name property in your project's `package.json` to reflect the new project name
 
 ### Available PNPM Scripts
 
@@ -48,11 +52,13 @@ packages:
 
 ### Using taskfile to build your services using docker
 
-Before using the taskfile to build your services, make sure you have installed [docker](https://docs.docker.com),and [Taskfile](https://taskfile.dev) in your environment. 
+Before using the taskfile to build your services, make sure you have installed [docker](https://docs.docker.com),and [Taskfile](https://taskfile.dev) in your environment.
 
-- Using your shell, run `task docker` to build the docker image and run the container
+#### Running Tasks
 
-- Using your shell, run `task --watch docker` to build, deploy and watch your project for changes in docker.
+- `task docker`: Used to build the docker image and run the container
+- `task --watch docker`: Used to build, deploy and watch your project for changes in docker.
+- `tasl --watch docker --force`: Used to force build, deploy and watch your project for changes in docker.
 
 ### Viewing the generated documentation
  - Execute `pnpm viewdocs` in the root of your monorepo to view the generated documentation in your default browser(http://127.0.0.1:57208/docs).
@@ -79,7 +85,7 @@ Before using the taskfile to build your services, make sure you have installed [
 - [x] Add Development option with watch mode
 - [x] Add Docker
 - [x] Add taskfile
-- [ ] Clean browser specific tsconfig
+- [ ] Complete browser based apps configuration
 
 ### Tools used to build this starter template
 

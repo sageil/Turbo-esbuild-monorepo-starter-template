@@ -2,11 +2,11 @@ version: "3"
 set:
   - "pipefail"
 env:
-  IMAGENAME: monorepo-demo
+  IMAGE_NAME: monorepo-demo
   CONTAINER_NAME: monorepo-demo
   TAG: latest
   CONTAINER_PORT: 3000
-  HOSTPORT: 3000
+  HOST_PORT: 3000
 tasks:
   remove-container:
     aliases: [rmc]
@@ -18,12 +18,12 @@ tasks:
     description: "Build image"
     labels: "Building image"
     cmds:
-       - docker image build -t ${IMAGENAME} -f Dockerfile .
+       - docker image build -t ${IMAGE_NAME} -f Dockerfile .
   run:
     description: "Run container"
     labels: "Running container"
     cmds:
-      - docker container run --name ${CONTAINER_NAME} -p ${HOSTPORT}:${CONTAINER_PORT} -d ${IMAGENAME}:${TAG}
+      - docker container run --name ${CONTAINER_NAME} -p ${HOSTPORT}:${CONTAINER_PORT} -d ${IMAGE_NAME}:${TAG}
   docker:
     interval: 200m
     description: "Run docker commands"

@@ -7,5 +7,6 @@ dist
 # Packages
 /packages
 /services
+/apps
 /tools
 *.ts

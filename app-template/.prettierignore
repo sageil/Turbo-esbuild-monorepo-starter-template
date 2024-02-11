@@ -4,4 +4,3 @@ node_modules
 dist
 .prettierrc.yaml
 tsconfig*
-coverage/**/*

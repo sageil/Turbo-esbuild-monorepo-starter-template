@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/tools/tsconfig/tsconfig.browser.json",
+  "compilerOptions": {
+    "rootDir": "./src/",
+    "outDir": "./dist/"
+},
+"include": ["./src/"],
+"exclude": [
+    "**/node_modules",
+    "**/.*/"
+]
+}

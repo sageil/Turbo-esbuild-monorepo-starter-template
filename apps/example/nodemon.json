@@ -1,0 +1,6 @@
+
+  {
+    "watch": ["/dist/**/*.js"],
+    "ext": "js",
+    "verbose": false
+}
