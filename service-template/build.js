@@ -1,10 +1,11 @@
 import { buildNode } from '@repo/tools/esbuild';
 import path from 'path';
-const distPath = path.resolve('./dist/index.cjs');
+const distPath = path.resolve('./dist');
 await buildNode({
   logLevel: 'silent',
-  outfile: distPath,
+  outdir: distPath,
   tsconfig: './tsconfig.json',
   format: 'cjs',
-  drop: ['console', 'debugger']
+  drop: ['console', 'debugger'],
+  outExtension: { '.js': '.cjs' }
 });

@@ -82,6 +82,9 @@ importers:
 
   services/example:
     dependencies:
+      '@packages/common':
+        specifier: workspace:^
+        version: link:../../packages/common
       express:
         specifier: ^4.18.2
         version: 4.18.2

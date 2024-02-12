@@ -6,5 +6,6 @@ await buildNode({
   tsconfig: './tsconfig.json',
   outdir: distPath,
   format: 'cjs',
-  drop: ['console', 'debugger']
+  drop: ['console', 'debugger'],
+  outExtension: { '.js': '.cjs' }
 });

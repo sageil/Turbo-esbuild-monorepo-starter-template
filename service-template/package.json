@@ -27,6 +27,7 @@
   "author": "Sammy Ageil",
   "license": "MIT",
   "dependencies": {
+    "@packages/common": "workspace:^",
     "express": "^4.18.2"
   }
 }

@@ -2,12 +2,15 @@
  * Docs for `service index` module
  * @packageDocumentation
  */
+import { doSomething } from '@packages/common';
+doSomething();
+
 import type { Application, Request, Response } from 'express';
 import express from 'express';
 const app: Application = express();
 
 app.get('/', (_: Request, res: Response) => {
-  res.send('Built with Typescript, PNPM and esbuild');
+  res.send('Built with Typescript, PNPM, and Esbuild.....');
 });
 
 app.listen(3000, () => {
