@@ -8,9 +8,10 @@ WORKDIR /app
 
 ## builder image
 FROM base AS build
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prefer-offline --frozen-lockfile
+## build the service
 RUN pnpm run build -F @services/example
-## ADDED
+## deploy the service
 RUN pnpm deploy -F @services/example --prod exampleservice
 ## final image
 FROM node:20.11.0-alpine3.19 as prod
