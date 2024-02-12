@@ -48,7 +48,7 @@ _Note_: Please change the name property in your project's `package.json` to refl
 - `pnpm format-all`: Start prettier in all projects within the monorepo
 - `pnpm lint-format`: Start linting and formatting on all projects within the monorepo
 - `pnpm lint-format:fix`: Apply linting and formating fixing on all projects within the monorepo
-- `pnpm format:fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
+- `pnpm format-fix`: Apply prettier formating and applying prettier fixes on all projects within the monorepo
 - `pnpm gendocs`: Start typedoc on all projects within the monorepo in directory called `docs` in the root of your monorepo
 
 ### Using taskfile to build your services using docker
@@ -107,4 +107,4 @@ Before using the taskfile to build your services, make sure you have installed [
 - [Docker](https://www.docker.com)
 - [Turbo](https://turbo.build)
 
- pnpm dlx turbo prune @services/example --docker
+

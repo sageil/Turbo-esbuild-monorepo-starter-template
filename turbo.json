@@ -79,9 +79,10 @@
     },
     "lint": {},
     "lint-all": {},
-    "lint-all:fix": {},
-    "lint:fix": {},
+   "lint-format:fix": {},
+   "lint-format": {},
+    "lint-fix": {},
     "format": {},
-    "format:fix": {}
+    "format-fix": {}
   }
 }

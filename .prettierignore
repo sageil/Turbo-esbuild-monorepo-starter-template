@@ -10,3 +10,4 @@ coverage/**/*
 pnpm-workspace.yaml
 package.json
 turbo.json
+tools/**

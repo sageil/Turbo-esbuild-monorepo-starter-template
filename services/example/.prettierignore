@@ -5,3 +5,4 @@ dist
 .prettierrc.yaml
 tsconfig*
 coverage/**/*
+types/**/*.d.ts

@@ -6,3 +6,4 @@ dist
 tsconfig*
 coverage/**/*
 *.json
+types/**/*.d.ts

@@ -15,9 +15,9 @@
     "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
     "start": "node ./dist/index.cjs",
     "dev": "nodemon",
-    "lint:fix": "pnpm lint --fix",
+    "lint-fix": "pnpm lint --fix",
     "format": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "format-fix": "prettier --write .",
     "test": "jest --passWithNoTests --detectOpenHandles --forceExit --coverage",
     "docs": "typedoc --options typedoc.json"
   },

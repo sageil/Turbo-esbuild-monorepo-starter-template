@@ -31,7 +31,7 @@ tasks:
       - task: remove-container
       - task: build
       - task: run
-    
+
     sources:
       - "./Dockerfile"
       - "./services/**/*"
