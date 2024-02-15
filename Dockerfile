@@ -10,14 +10,11 @@ WORKDIR /app
 FROM base AS build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prefer-offline --frozen-lockfile
 ## build the service
-RUN pnpm run build -F @services/example
-## deploy the service
-RUN pnpm deploy -F @services/example --prod exampleservice
+RUN pnpm run build -F @services/example && pnpm deploy -F @services/example --prod exampleservice
 ## final image
 FROM node:20.11.0-alpine3.19 as prod
 RUN apk update
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 user
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 user
 WORKDIR /usr/app
 COPY --from=build /app/exampleservice /usr/app
 USER user
