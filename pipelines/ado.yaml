@@ -44,8 +44,8 @@ stages:
               pnpm build
               pnpm lint-all
               pnpm test
-              
+
             displayName: "pnpm install and build"
           - script: |
-                ls -la $(System.DefaultWorkingDirectory)/node_modules/.cache
+              ls -la $(System.DefaultWorkingDirectory)/node_modules/.cache
             displayName: "List Workspace"

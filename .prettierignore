@@ -11,3 +11,4 @@ pnpm-workspace.yaml
 package.json
 turbo.json
 tools/**
+pipelines/**
