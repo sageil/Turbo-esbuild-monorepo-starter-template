@@ -1,0 +1,51 @@
+trigger: none
+pool:
+  vmImage: ubuntu-latest
+resources:
+  - repo: self
+variables:
+  pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
+  CI: true
+  TURBO_TELEMETRY_DISABLED: 1
+stages:
+  - stage: BuildQA
+    jobs:
+      - job:
+        steps:
+          - task: UseNode@1
+            inputs:
+              version: "20.11.0"
+          - task: Cache@2
+            inputs:
+              key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
+              path: $(pnpm_config_cache)
+            displayName: Cache pnpm
+          - script: |
+              corepack enable
+              corepack prepare pnpm@latest-8 --activate
+              pnpm config set store-dir $(pnpm_config_cache)
+            displayName: Setup pnpm
+          - task: Cache@2
+            displayName: Cache Turbo
+            inputs:
+              key: '"turbo" | "$(Agent.OS)" | "$(Build.SourceBranch)" | "$(Build.SourceVersion)"'
+              # the keys are set up to first try the current branch or try to fetch main otherwise, to use main branch cache for feature branches
+              restoreKeys: |
+                "turbo" | "$(Agent.OS)" | "$(Build.SourceBranch)"
+                "turbo" | "$(Agent.OS)" | "main"
+                "turbo" | "$(Agent.OS)"
+                "turbo"
+              path: node_modules/.cache
+
+          - script: |
+              find ./node_modules/.cache/turbo mtime +10 -type f -delete
+          - script: |
+              pnpm install --ignore-scripts
+              pnpm build
+              pnpm lint-all
+              pnpm test
+              
+            displayName: "pnpm install and build"
+          - script: |
+                ls -la $(System.DefaultWorkingDirectory)/node_modules/.cache
+            displayName: "List Workspace"
