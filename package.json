@@ -4,7 +4,7 @@
   "description": "PNPM Monorepo using esbuild and turbo",
   "type": "module",
   "scripts": {
-    "build": "turbo run build --cache-dir='./.cache'",
+    "build": "turbo run build",
     "prod": "pnpm clean:prod && turbo run --parallel prod",
     "clean:prod": "rimraf ./production-deployments/**",
     "dev": "turbo run dev",
@@ -12,7 +12,7 @@
     "lint-format": "turbo run --parallel lint format ",
     "lint-format:fix": "turbo run --parallel lint-fix format-fix",
     "lint-all": "turbo run --parallel lint",
-    "lint-fix": "turbo run --parallel lint-all:fix",
+    "lint-fix": "turbo run --parallel lint-fix",
     "format-all": "turbo run --parallel format",
     "format-fix": "prettier --write .",
     "test": "turbo run test",

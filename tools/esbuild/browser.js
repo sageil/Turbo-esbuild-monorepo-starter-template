@@ -1,8 +1,8 @@
 import { build } from "esbuild";
 import fg from "fast-glob";
 
-export const buildBrowser = async ({ ...args }) => {
-  console.log(fg("./src/**/*.ts"));
+export async function buildBrowser  ({ ...options  }) {
+ 
   await build({
     entryPoints: await fg("src/**/*.ts"),
     platform: "browser",
@@ -12,6 +12,6 @@ export const buildBrowser = async ({ ...args }) => {
     outdir: "./dist",
     sourcemap: false,
     logLevel: "info",
-    ...args,
+    ...options,
   });
 };

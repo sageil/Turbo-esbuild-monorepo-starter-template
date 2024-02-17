@@ -11,16 +11,7 @@
         "!apps/**"
       ]
     },
-    "//#lint:fix": {
-      "inputs": [
-        "!.git/**",
-        "!node_modules/**",
-        "!tools/**",
-        "!packages/**",
-        "!services/**",
-        "!apps/**"
-      ]
-    },
+  
     "//#format": {
       "inputs": [
         "!.git/**",
@@ -42,7 +33,7 @@
       ]
     },
     "build": {
-      "dependsOn": ["^build", "lint"],
+      "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
     "clean:build": {
@@ -73,12 +64,16 @@
       "persistent": true
     },
     "test": {
-      "dependsOn": ["build"],
+      "dependsOn": ["build","lint"],
+      "outputs": ["coverage/**"],
+      "inputs": ["src/**/*.ts", "test/**/*.ts"],
+      "outputMode": "full",
       "cache": true,
       "persistent": false
     },
     "lint": {},
     "lint-all": {},
+    "lint:fix": {},
    "lint-format:fix": {},
    "lint-format": {},
     "lint-fix": {},

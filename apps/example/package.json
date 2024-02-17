@@ -12,7 +12,7 @@
     "prod": "pnpm --filter=@apps/example --prod deploy ../../production-deployments/brwoser-prod/",
     "lint": "eslint -c ./.eslintrc.cjs src/**/*.ts",
     "dev": "nodemon",
-    "lint:fix": "pnpm lint --fix",
+    "lint-fix": "pnpm lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "test": "jest --passWithNoTests --detectOpenHandles --forceExit --coverage",
